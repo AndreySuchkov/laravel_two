@@ -31,4 +31,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function texts(): HasMany
+    {
+        return $this->hasMany(Text::class);
+    }
 }
